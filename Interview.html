@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div style="text-align: center;">
+
+    
+    <h1>Interview Soru 1</h1>
+
+    <ul style="text-align: center; list-style: none; color: red; font-weight: bolder;">
+        <li>Birim Fiyat ve Miktar Giriniz</li>
+        <li>Varsa İndirim Oranı Giriniz</li>
+        <li>KDV oranını giriniz</li>
+    </ul>
+    <form>
+    <label>Birim Fiyat:</label>
+    <input type="text" id="unitPrice">
+
+    <label>Miktar:</label>
+    <input type="text" id="quantity">
+
+    <label  style="color: green; font-weight: bolder;">Toplam Tutar:</label>
+    <input type="text" id="totalPrice" readonly>
+
+    <br>
+    <br>
+
+    <label>İndirim Oranı(%):</label>
+    <input type="text" id="saleRate">
+
+    <label>İndirim Tutarı:</label>
+    <input type="text" id="saleAmout">
+
+    <label  style="color: green; font-weight: bolder;">İndirimli Toplam Tutar:</label>
+    <input type="text" id="totalPriceWithSale" readonly>
+
+<br><br>
+
+<label>KDV Oranı(%):</label>
+    <input type="text" id="taxRate">
+
+    <label>KDV Tutarı:</label>
+    <input type="text" id="taxAmout">
+
+    <label  style="color: green; font-weight: bolder;">KDV Dahil Ödenecek Tutar:</label>
+    <input type="text" id="totalPriceWithTax" readonly>
+    
+    <br>
+    <br>
+
+
+    <input type="button" style="font-weight: bolder; width: 100px; height: 30px; letter-spacing: 1.5px; border-radius: 5px; color: white; background-color: rgb(44, 109, 214);" id="btnTotalPrice" value="Hesapla">
+</form>
+</div>
+    <script>
+        var btn_TotalPrice=document.getElementById("btnTotalPrice");
+        btn_TotalPrice.onclick=function(){
+            var s1=Number(document.getElementById("unitPrice").value);
+            var s2=Number(document.getElementById("quantity").value);
+            var totalPrice=s1*s2;
+            //debugger;
+            
+            document.getElementById("totalPrice").value=totalPrice +" TL";
+
+            var s3=Number(document.getElementById("saleRate").value);
+            var x=totalPrice*s3;
+            var saleAmout=x/100;
+            document.getElementById("saleAmout").value=saleAmout +" TL";
+            
+            var saleTotalPrice = totalPrice-saleAmout;
+                
+            document.getElementById("totalPriceWithSale").value=saleTotalPrice +" TL";
+                //debugger;
+
+            var s4=Number(document.getElementById("taxRate").value);
+            var y=saleTotalPrice*s4;
+            var taxAmout=y/100;
+             document.getElementById("taxAmout").value=taxAmout+" TL";
+                
+             var taxTotalPrice= saleTotalPrice+taxAmout;
+
+             document.getElementById("totalPriceWithTax").value=taxTotalPrice+" TL";
+        }
+
+    </script>
+
+
+
+</body>
+</html>
