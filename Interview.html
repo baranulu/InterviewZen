@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body >
@@ -25,7 +26,7 @@
     <input type="text" id="quantity">
 
     <label  style="color: green; font-weight: bolder;">Toplam Tutar:</label>
-    <input type="text" id="totalPrice" readonly>
+    <input type="text" id="totalPriceWithoutTaxAndSale" readonly>
 
     <br>
     <br>
@@ -53,39 +54,71 @@
     <br>
     <br>
 
-
-    <input type="button" style="font-weight: bolder; width: 100px; height: 30px; letter-spacing: 1.5px; border-radius: 5px; color: white; background-color: rgb(44, 109, 214);" id="btnTotalPrice" value="Hesapla">
+    
+    <input type="button"   class="btn" id="defaultTotalPrice" value="Net Toplam">
+    <input type="button" class="btn" id="saleTotalPrice" value="İndirimli Fiyat">
+<input type="button" class="btn" id="kdvTotalPrice" value="Kdv dahil Fiyat">
 </form>
 </div>
     <script>
-        var btn_TotalPrice=document.getElementById("btnTotalPrice");
-        btn_TotalPrice.onclick=function(){
-            var s1=Number(document.getElementById("unitPrice").value);
+            function TotalPriceWithoutTaxAndSale(){
+                var s1=Number(document.getElementById("unitPrice").value);
             var s2=Number(document.getElementById("quantity").value);
             var totalPrice=s1*s2;
-            //debugger;
+            document.getElementById("totalPriceWithoutTaxAndSale").value=totalPrice +" TL";
+                return totalPrice;
+            }
             
-            document.getElementById("totalPrice").value=totalPrice +" TL";
 
+            
+
+        var btn_totalPriceWithoutTaxAndSale=document.getElementById("defaultTotalPrice");
+        btn_totalPriceWithoutTaxAndSale.onclick=function(){
+            TotalPriceWithoutTaxAndSale();
+        };
+
+        function TotalPriceWithSale(){
+            
             var s3=Number(document.getElementById("saleRate").value);
-            var x=totalPrice*s3;
-            var saleAmout=x/100;
+            const totalPrice=TotalPriceWithoutTaxAndSale();
+            const saleAmout=totalPrice*s3/100;
+            debugger;
             document.getElementById("saleAmout").value=saleAmout +" TL";
             
             var saleTotalPrice = totalPrice-saleAmout;
+            debugger;
                 
             document.getElementById("totalPriceWithSale").value=saleTotalPrice +" TL";
-                //debugger;
+            return saleTotalPrice;
+        }
+        var btn_TotalPriceWithSale=document.getElementById("saleTotalPrice");
+        btn_TotalPriceWithSale.onclick=function(){
+            TotalPriceWithSale();
+        }
+
+        function TotalPriceWithSaleAndTax(){
 
             var s4=Number(document.getElementById("taxRate").value);
-            var y=saleTotalPrice*s4;
-            var taxAmout=y/100;
-             document.getElementById("taxAmout").value=taxAmout+" TL";
-                
-             var taxTotalPrice= saleTotalPrice+taxAmout;
-
-             document.getElementById("totalPriceWithTax").value=taxTotalPrice+" TL";
+            const saleTotalPrice= TotalPriceWithSale();
+                const taxAmout= saleTotalPrice*s4/100;
+                debugger;
+                document.getElementById("taxAmout").value=taxAmout +" TL";
+                var totalPriceWithTax=saleTotalPrice+taxAmout;
+                document.getElementById("totalPriceWithTax").value=totalPriceWithTax+" TL";
+            
+            
+        
         }
+            var btn_TotalPriceWithSaleAndTax=document.getElementById("kdvTotalPrice");
+            btn_TotalPriceWithSaleAndTax.onclick=function(){
+                TotalPriceWithSale();
+                TotalPriceWithSaleAndTax();
+               
+                
+                
+
+            }
+
 
     </script>
 
