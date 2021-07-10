@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis\\KitapSiparis\\KitapSiparis.csproj",
+      "projectUniqueName": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis Q2\\KitapSiparis\\KitapSiparis.csproj",
       "projectName": "KitapSiparis",
-      "projectPath": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis\\KitapSiparis\\KitapSiparis.csproj",
+      "projectPath": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis Q2\\KitapSiparis\\KitapSiparis.csproj",
       "packagesPath": "C:\\Users\\Msi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis\\KitapSiparis\\obj\\",
+      "outputPath": "C:\\Users\\Msi\\Desktop\\InterviewZen\\KitapSiparis Q2\\KitapSiparis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Msi\\AppData\\Roaming\\NuGet\\NuGet.Config",

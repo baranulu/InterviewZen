@@ -4,13 +4,11 @@ using System.Text;
 
 namespace KitapSiparis
 {
-   public class Kitap
+   public class Book
     {
-        public string KitapAdı { get; set; }
-        public string KitapTür { get; set; }
-        public string YayınEvi { get; set; }
+        public string BookName { get; set; }
+        public string TypeOfBook { get; set; }
         public decimal UnitPrice { get; set; }
         public int UnitİnStock { get; set; }
-        public Yazar Yazar { get; set; }
     }
 }
