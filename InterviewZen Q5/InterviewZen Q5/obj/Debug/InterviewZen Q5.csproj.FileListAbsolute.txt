@@ -1,0 +1,7 @@
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\bin\Debug\InterviewZen Q5.exe.config
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\bin\Debug\InterviewZen Q5.exe
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\bin\Debug\InterviewZen Q5.pdb
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\obj\Debug\InterviewZen Q5.csprojAssemblyReference.cache
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\obj\Debug\InterviewZen Q5.csproj.CoreCompileInputs.cache
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\obj\Debug\InterviewZen Q5.exe
+C:\Users\Msi\Desktop\InterviewZen\InterviewZen Q5\InterviewZen Q5\obj\Debug\InterviewZen Q5.pdb

@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hello, Bootstrap Table!</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+</head>
+
+<body>
+  <table data-toggle="table">
+    <thead>
+      <tr>
+        <th class="id">ID</th>
+        <th>employeeName</th>
+        <th>employeeSalary</th>
+        <th>employeeAge</th>
+      </tr>
+    </thead>
+    <tbody class="generatedCotent">
+
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+  <script>
+    fetch('http://dummy.restapiexample.com/api/v1/employees')
+      .then(res => res.json())
+      .then(data => {
+        for (let i = 0; i < data.data.length; i++) {
+
+          let id = data.data[i].id;
+          let employeeName = data.data[i].employee_name;
+          let employeeSalary = data.data[i].employee_salary;
+          let employeeAge = data.data[i].employee_age;
+
+          var generatedCotent = `<tr>
+                    <td>${id}</td>
+                    <td>${employeeName}</td>
+                    <td>${employeeSalary}</td>
+                    <td>${employeeAge}</td>
+                  </tr>`;
+
+          document.querySelector('.generatedCotent').innerHTML += generatedCotent;
+        }
+        document.querySelector('.no-records-found').remove();
+      });
+  </script>
+</body>
+
+</html>
